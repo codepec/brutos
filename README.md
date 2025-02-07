@@ -22,8 +22,8 @@ A browser-based RPG game where players fight waves of enemies, gain experience, 
 
 1️⃣ Clone the Repository
 
-git clone https://github.com/yourgithubusername/RPG-Battle-Game.git
-cd RPG-Battle-Game
+git clone https://github.com/codepec/brutos.git
+cd brutos
 
 2️⃣ Open index.html in Your Browser
 
