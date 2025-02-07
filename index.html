@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <!-- Responsive Meta-Tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>March of Steel</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+      <!-- Bottom Tabs mit Icons -->
+      <div id="Tabs">
+        <button id="tabGame">Game</button>
+        <button id="tabSettings">Settings</button>
+        <button id="tabExit">Profile</button>
+    </div>
+  <!-- Hauptmenü-Overlay (optional, falls benötigt) -->
+  <div id="mainMenu">
+    <h1>Hauptmenü</h1>
+    <button id="btnContinue">Weiterspielen</button>
+    <button id="btnSave">Speichern</button>
+    <button id="btnOptionsMain">Optionen</button>
+    <button id="btnExitMain">Beenden</button>
+  </div>
+
+  <div class="titleClass">
+    <h1 id="gameTitle">March of Steel</h1>
+    <p id="subtitle">Forge Your Fate, Conquer the Battle</p>
+  </div>
+
+  <div class="player-stats">
+    <span>Gold: <span id="playerGold">0</span></span>
+    <span>Attack: <span id="playerAttack">10</span></span>
+    <span>Defense: <span id="playerDefense">5</span></span>
+  </div>
+
+    <!-- Spielerbereich: fixiert am unteren Bildschirmrand -->
+    <div id="playerArea">
+      <div class="player-header">
+        <h2>Player <span class="player-level">(Level <span id="playerLevel">1</span>)</span></h2>
+      </div>
+  
+      <div class="progress-container">
+        <label for="healthBar">HP:</label>
+        <progress id="healthBar" value="100" max="100"></progress>
+        <span id="healthText">100 / 100</span>
+      </div>
+      <div class="progress-container">
+        <label for="xpBar">XP:</label>
+        <progress id="xpBar" value="0" max="100"></progress>
+        <span id="xpText">0 / 100</span>
+      </div>
+
+  
+    </div>
+
+  <!-- Spielbereich -->
+  <div id="gameContainer">
+    <!-- Game Log: Oben, 2 Zeilen sichtbar, rest scrollable -->
+    <div id="gameLogContainer">
+      <div id="gameLog"></div>
+    </div>
+
+    <!-- Enemies-Bereich: maximal 4 Einträge sichtbar, ansonsten scrollbar -->
+    <div id="enemyArea">
+      <h2>Enemies</h2>
+      <div id="enemiesList"></div>
+    </div>
+
+
+  </div>
+
+
+  <div id="upgrades">
+    <button id="upgradeAttack">Upgrade Attack (Cost: 50 Gold)</button>
+    <button id="upgradeDefense">Upgrade Defense (Cost: 50 Gold)</button>
+    <button id="upgradeHealth">Upgrade Health (Cost: 50 Gold)</button>
+  </div>
+
+  <!-- Options-Overlay (wird per Tab "Settings" eingeblendet) -->
+  <div id="optionsOverlay">
+    <div id="optionsContent">
+      <h2>Optionen</h2>
+      <!-- Hier können weitere Optionsfelder eingefügt werden -->
+      <button id="closeOptions">Schließen</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
