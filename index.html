@@ -88,6 +88,12 @@
     </div>
   </div>
 
-  <script src="game.js"></script>
+  <script src="game.js">  </script>
+  <script>
+        // --- Weiterspielen-Button ---
+        document.getElementById('btnContinue').addEventListener('click', () => {
+      document.getElementById('mainMenu').style.display = 'none'; // Menü ausblenden
+    });
+  </script>
 </body>
 </html>

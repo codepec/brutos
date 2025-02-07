@@ -132,8 +132,8 @@ function handleEnemyTimeout(enemy) {
 // --- Angriff auf Gegner (mit Cooldown) ---
 function attackEnemy(enemyId) {
   const now = Date.now();
-  if (now - lastAttackTime < 1000) {
-    logMessage("Warte eine Sekunde, bevor du erneut angreifst!");
+  if (now - lastAttackTime < 200) {
+    logMessage("Du musst dich regenerieren, bevor du erneut angreifst!");
     return;
   }
   lastAttackTime = now;
