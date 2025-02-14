@@ -1,0 +1,25 @@
+{
+    "name": "March of Steel",
+    "short_name": "March of Steel",
+    "description": "Ein spannendes Abenteuer-Spiel, bei dem du gegen Gegner kämpfst und dich verbesserst.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#282c34",
+    "theme_color": "#283d49",
+    "icons": [
+      {
+        "src": "/icons/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/icons/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "orientation": "portrait",
+    "scope": "/",
+    "lang": "de"
+  }
+  
