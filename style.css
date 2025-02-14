@@ -1,40 +1,36 @@
 /* Farben als Variablen im :root definieren */
 :root {
     /* Hintergrundfarben */
-    --background-color: #283d49; /* Dunkles, stimmungsvolles Grau */
-    --primary-color: #283d49; /* Dunkler, kühler Grünton */
-    --secondary-color: #000000; /* Sehr dunkles Grau mit Blautönen */
-    --accent-color: #3d4457; /* Kühle, gedämpfte Blau-Grau-Töne */
+    --background-color: #1e2b33; /* Dunkleres Blau-Grau */
+    --primary-color: #283d49; /* Kühles Dunkelgrün */
+    --secondary-color: #101820; /* Fast schwarzer Hintergrund */
+    --accent-color: #3d4457; /* Gedämpftes Blau-Grau */
     
-    /* Button und Interaktionen */
-    --button-color: #5c6d77; /* Gedämpftes, stimmungsvolles Grün */
-    --button-hover-color: #4f6167; /* Dunkleres Grün für Hover-Effekt */
+    /* Buttons und Interaktionen */
+    --button-color: #546a76; /* Sanftes Stahlgrau */
+    --button-hover-color: #4a5d65; /* Dunklere Variante */
     
     /* Textfarben */
-    --text-color: #e4e9f0; /* Helles, kühles Grau für den Text */
-    --subtext-color: #b1b8c1; /* Hellerer Grauton für Subtexte */
+    --text-color: #e4e9f0; /* Helles Grau */
+    --subtext-color: #b1b8c1; /* Hellerer Grauton */
     
-    /* Log-Bereich und allgemeine Hintergrundfarben */
-    --log-bg-color: #2a2e3d; /* Dunkelgrau mit einem Hauch von Blau */
-    --log-text-color: #d6dce4; /* Helles, bläuliches Grau für Logs */
+    /* Log-Bereich */
+    --log-bg-color: #2a2e3d; /* Dunkelgrau mit Blautönen */
+    --log-text-color: #d6dce4; /* Helles Blau-Grau */
     
-    /* Grenzen und Trennlinien */
-    --border-color: #444b59; /* Dunkleres Grau mit einem Hauch Blau */
-    --highlight-color: #2b282880; /* Gedämpftes, fast schwarzes Highlight */
-    
-    /* Schatten und Transparenzen */
-    --shadow-color: rgba(0, 0, 0, 0.3); /* Intensivierter Schatten für Tiefe */
+    /* Grenzen & Schatten */
+    --border-color: #444b59;
+    --shadow-color: rgba(0, 0, 0, 0.4);
     
     /* Fehlerfarben */
-    --error-color: #d9534f; /* Dunkles Rot für Fehler */
-    --error-hover-color: #c9302c; /* Etwas dunkleres Rot für Hover */
+    --error-color: #d9534f;
+    --error-hover-color: #c9302c;
     
-    /* Hintergrund für Overlays */
-    --dark-bg-color: rgba(0, 0, 0, 0.95); /* Dunklerer, fast schwarzer Hintergrund */
+    /* Overlay-Hintergrund */
+    --dark-bg-color: rgba(0, 0, 0, 0.95);
 }
 
-
-/* Grundlegendes Styling */
+/* Allgemeines Styling */
 body {
     font-family: 'Roboto', sans-serif;
     background: var(--background-color);
@@ -43,43 +39,34 @@ body {
     color: var(--text-color);
 }
 
-/* Titel und Untertitel */
+/* Titel */
 .titleClass {
     background-color: var(--secondary-color);
-    padding: 5px;
-    border-bottom: 1px solid var(--highlight-color);
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
 }
 
 #gameTitle {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
-    color: var(--primary-color);
-    margin: 0;
-    text-align: center;
+    color: var(--accent-color);
     letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 5px var(--shadow-color);
 }
 
 #subtitle {
-    font-size: 0.6em;
+    font-size: 0.9em;
     color: var(--subtext-color);
-    text-align: center;
-    margin-top: 10px;
     font-style: italic;
-    letter-spacing: 1px;
     opacity: 0.8;
 }
 
-/* Hauptmenü-Overlay */
+/* Hauptmenü */
 #mainMenu {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: var(--dark-bg-color);
-    color: #fff;
-    z-index: 2000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,66 +76,81 @@ body {
 
 #mainMenu h1 {
     font-size: 2.5em;
-    margin-bottom: 30px;
-    text-align: center;
     color: var(--accent-color);
+    margin-bottom: 20px;
 }
 
 #mainMenu button {
-    padding: 15px 30px;
-    margin: 10px;
+    width: 250px;
+    padding: 12px;
     font-size: 1.1em;
     cursor: pointer;
-    width: 250px;
     background: var(--accent-color);
     border: none;
     color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 #mainMenu button:hover {
-    background: #d69c1e;
+    background: var(--button-hover-color);
 }
 
-/* Spielbereich */
-
-
-/* Game Log */
-#gameLogContainer {
+/* Spielerbereich */
+#playerArea {
     background: var(--log-bg-color);
-    border-top: 1px solid var(--border-color);
-    height: 120px;
-    overflow-y: auto;
-    background: var(--log-bg-color);
-    border-radius: 8px;
-    margin: 5px;
-    padding: 10px;
-    box-shadow: 0 2px 4px var(--shadow-color);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    margin: 10px;
 }
 
-#gameLog {
-    font-size: 1em;
-    line-height: 1.5em;
+.player-header h2 {
+    font-size: 1.3em;
+    margin: 0;
     color: var(--log-text-color);
-
 }
 
-/* Enemies-Bereich */
+/* Spieler-Stats */
+.player-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    font-size: 1.1em;
+}
+
+/* Fortschrittsbalken */
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+progress {
+    width: 70%;
+    height: 12px;
+    border-radius: 6px;
+    background-color: var(--secondary-color);
+}
+
+/* Feinde-Bereich */
 #enemyArea {
     background: var(--log-bg-color);
-    border-top: 1px solid var(--border-color);
-    border-radius: 8px;
     padding: 15px;
-
-    box-shadow: 0 2px 4px var(--shadow-color);
-    height: 220px;
-    margin: 5px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontale Zentrierung */
+    justify-content: center; /* Vertikale Zentrierung */
+    text-align: center; /* Text im Container zentrieren */
+    height: 100%; /* Optional: Höhe des Containers auf 100% setzen */
 }
 
+
 #enemyArea h2 {
-    margin-top: 0;
     font-size: 1.3em;
     color: var(--log-text-color);
 }
@@ -156,7 +158,6 @@ body {
 #enemiesList {
     max-height: 220px;
     overflow-y: auto;
-    margin-top: 10px;
 }
 
 .enemy {
@@ -165,131 +166,82 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1em;
-    color: var(--subtext-color);
 }
 
 .enemy:last-child {
     border-bottom: none;
 }
 
-/* Spielerbereich */
-#playerArea {
-    background: var(--log-bg-color);
-    border-top: 1px solid var(--border-color);
-    padding: 15px;
-    box-shadow: 0 -3px 8px var(--shadow-color);
-    margin:5px;
-    border-radius: 15px;
-}
-
-.player-header h2 {
-    margin: 0;
-    font-size: 1.2em;
-    color: var(--log-text-color);
-}
-
-/* Spielerstatistiken */
-.player-stats {
+.enemy-image-large {
+    width: 300px; /* Breite des Bildes */
+    height: auto; /* Höhe wird proportional zur Breite angepasst */
+    max-width: 100%; /* Bild wird auf 100% der Container-Breite skalierbar */
+    border: 1px solid var(--accent-color);
+    border-radius: 10px; /* Abgerundete Ecken */
+  }
+  
+  /* Container-Styling für zentrierte Ausrichtung */
+  .enemy-image-container {
     display: flex;
-    justify-content: space-around;
-    margin: 15px 0;
-    font-size: 1.1em;
-    color: var(--log-text-color);
-}
-
-/* Progressbar */
-.progress-container {
-    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    
-}
+    margin: 20px;
 
-progress {
-    width: 70%;
-    height: 10px;
-    border-radius: 8px;
-    background-color: var(--secondary-color);
-}
+  }
+  
 
-/* Upgrade-Buttons nebeneinander */
+/* Upgrades */
 #upgrades {
     display: flex;
     justify-content: space-between;
     gap: 10px;
     flex-wrap: wrap;
-    margin-top: 15px;
+    
+    margin:10px;
 }
 
 #upgrades button {
     flex: 1;
-    margin: 0 5px;
-    padding: 12px;
+    padding: 10px;
     font-size: 1em;
-    cursor: pointer;
     background-color: var(--button-color);
     color: white;
-    border: none;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
+    border: none;
+    transition: background-color 0.3s;
+    border: 1px solid var(--accent-color);
 }
 
 #upgrades button:hover {
     background-color: var(--button-hover-color);
 }
 
-
-
-/* Grundlegende Darstellung der Tabs */
+/* Tabs */
 #Tabs {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: var(--secondary-color);
-  }
-  
-  #Tabs button {
-    font-size: 0.9em; /* Kleinere Schriftgröße für mobile Ansicht */
-    background-color: var(--secondary-color);
+}
+
+#Tabs button {
+    font-size: 1em;
+    background-color: transparent;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    color:var(--primary-color);
-    text-align: center;
-  }
-  
-  /* Aktives Tab - Optional */
-  #Tabs button.active {
-    background-color: var(--secondary-color);
+    padding: 10px;
+    color: var(--primary-color);
+}
+
+#Tabs button.active {
     font-weight: bold;
-  }
-  
-  /* Optimierungen für noch kleinere Bildschirme (z.B. Smartphones) */
-  @media (max-width: 600px) {
-    #Tabs {
-      padding: 5px 10px; /* Etwas mehr Polsterung auf kleinen Geräten */
-    }
-  
-    #Tabs button {
-      font-size: 0.8em; /* Noch kleinere Schriftgröße auf kleinen Bildschirmen */
-      padding: 6px 12px; /* Etwas weniger Polsterung */
-      min-width: 60px; /* Noch schmalere Tabs */
-    }
-  }
-  
+}
 
 /* Options Overlay */
 #optionsOverlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(0, 0, 0, 0.8);
-    z-index: 3000;
     display: none;
     align-items: center;
     justify-content: center;
@@ -297,40 +249,38 @@ progress {
 
 #optionsContent {
     background: var(--log-bg-color);
-    padding: 25px;
+    padding: 20px;
     border-radius: 12px;
     text-align: center;
-    width: 90%;
     max-width: 400px;
-    box-shadow: 0 4px 12px var(--shadow-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 #closeOptions {
     background-color: var(--error-color);
-    color: white;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
+    padding: 10px;
     border-radius: 8px;
     border: none;
-    transition: background-color 0.3s ease;
+    color: white;
+    transition: background-color 0.3s;
 }
 
 #closeOptions:hover {
     background-color: var(--error-hover-color);
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 600px) {
+#gameLogContainer {
+    height: 100px;
+    margin: 15px;
+}
 
+/* Mobile Optimierung */
+@media (max-width: 600px) {
     #mainMenu button {
         width: 100%;
     }
 
-
-
     .player-stats {
-        align-items: center;
         font-size: 1em;
     }
 
@@ -340,5 +290,6 @@ progress {
 
     #gameLogContainer {
         height: 100px;
+        margin: 15px;
     }
 }
